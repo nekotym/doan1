@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dịch vụ</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+  </head>
+  <body onload="logintk(),loadLocal()">
+    <div id="toastBox"></div>
+
+    <input type="checkbox" id="toggle" class="checkbox" />
+    <section id="header">
+      <a href="../html/home.html" style="text-decoration: none">
+        <div class="logo-admin black">
+          <ul class="logo-admin-ul">
+            <li><span>ĐỨC ANH AUDI</span></li>
+            <li><span>ANH AUDI 88</span></li>
+          </ul>
+        </div>
+      </a>
+      <div>
+        <label class="toggle" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul id="nav" class="nav">
+          <li class="nav-item"><a href="../html/mauxe.html"> MẪU XE</a></li>
+          <li class="nav-item">
+            <a href="../html/dichvu.html" class="active"> DỊCH VỤ</a>
+          </li>
+          <li class="nav-item">
+            <a href="../html/gioithieu.html"> GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item account">
+            <a href="../html/dangnhap.html"> TÀI KHOẢN</a>
+          </li>
+          <li class="nav-item profile">
+            <a href="../html/user.html"><span class="userlg"></span></a>
+            <span
+              class="tttk"
+              title="Hãy cập nhật thông tin tài khoản để bảo mật"
+            >
+              <i class="ri-error-warning-fill"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="dv">
+      <div class="dichvu-page">
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-survey-fill"></i></div>
+            <span>Bảo hành xe ô tô định kỳ</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #ff0000, #000000)"
+          >
+            <span>Bảo hành xe ô tô định kỳ</span>
+            <p>
+              Trong thời gian bảo hành, trung tâm bảo dưỡng sẽ chịu trách nhiệm
+              sửa chữa miễn phí những hư hỏng của xe ô tô từ vật liệu đến sản
+              xuất theo các quy định và điều khoản trước đó. Khách hàng sẽ được
+              trung tâm bảo dưỡng nhắc hẹn bảo dưỡng xe định kỳ một cách cẩn
+              thận và chu đáo.
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-check-line"></i></div>
+            <span>Cung cấp phụ tùng chính hãng</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #ffd900, #000000)"
+          >
+            <span style="font-size: 20px">Cung cấp phụ tùng chính hãng</span>
+            <p>
+              Thị trường đa dạng khiến khách hàng không thể phân biệt được đâu
+              mới là phụ tùng xe ô tô chính hãng. Trung tâm tâm dịch vụ xe ô tô
+              sẽ cung cấp đến khách hàng phụ tùng chính hãng được thiết kế, sản
+              xuất, kiểm tra chất lượng tuân thủ tiêu chuẩn khắt khe nhất.
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-paint-fill"></i></div>
+            <span>Đồng sơn ô tô</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #15ff00, #000000)"
+          >
+            <span>Đồng sơn ô tô</span>
+            <p>
+              Dịch vụ đồng sơn được rất nhiều khách hàng yêu thích bởi nó làm xe
+              mới lại sau khi qua thời gian sử dụng. Nó là cả quá trình từ gò,
+              hàn và làm đồng thân vỏ xe sau đó sơn lại làm cho thân xe như mới.
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-steering-fill"></i></div>
+            <span>Dịch vụ bảo dưỡng</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #00fff2, #000000)"
+          >
+            <span>Dịch vụ bảo dưỡng</span>
+
+            <p>
+              Dịch vụ bảo dưỡng là chuỗi các công việc mà hãng xe bắt buộc phải
+              làm đối với các xe sau một thời gian vận hành. Trong vài năm gần
+              đây dịch vụ bảo dưỡng nhanh rất được ưa chuộng vì đáp ứng chất
+              lượng, rút ngắn thời gian và tối ưu hoá chi phí mà vẫn mang lại
+              được sự hài lòng của khách hàng .
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-tools-fill"></i></div>
+            <span>Dịch vụ sửa chữa</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #0044ff, #000000)"
+          >
+            <span>Dịch vụ sửa chữa</span>
+
+            <p>
+              Dịch vụ sửa chữa xe cũng như bác sĩ chữa bệnh cho bệnh nhân. Chỉ
+              cần chẩn đoán đúng bệnh và đưa ra đúng phương pháp sẽ nhanh chóng
+              sửa chữa được hư hỏng của xe ô tô.
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-caravan-fill"></i></div>
+            <span>Cứu hộ</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #b700ff, #000000)"
+          >
+            <span>Cứu hộ</span>
+
+            <p>
+              Dịch vụ tư vấn sửa chữa bảo dưỡng và hỗ trợ cứu hộ luôn được cung
+              cấp 24/24. Bất cứ lúc nào bạn có thắc mắc về các vấn đề liên quan
+              đến ô tô đều sẽ được giải đáp nhanh chóng, chính xác. Trong trường
+              hợp ôtô của bạn cần đến sự cứu hộ cũng sẽ được phục vụ nhanh
+              chóng.
+            </p>
+          </div>
+        </div>
+        <div class="dichvu-box">
+          <div class="front-face">
+            <div class="dichvu-icon"><i class="ri-brush-4-fill"></i></div>
+            <span>Chăm sóc làm đẹp xe</span>
+          </div>
+          <div
+            class="back-face"
+            style="background: linear-gradient(-135deg, #ff009d, #000000)"
+          >
+            <span>Chăm sóc làm đẹp xe</span>
+            <p>
+              <li>Phủ nano cho xe.</li>
+              <li>Thực hiện sơn phủ gầm.</li>
+              <li>Thông xúc kim phun.</li>
+              <li>Tẩy cặn buồng đốt.</li>
+              <li>Phủ nano kính hoặc dán phim cách nhiệt.</li>
+              <li>Vệ sinh xe ô tô.</li>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container-footer">
+        <div class="col">
+          <div class="heading-fot"><h3>Tất cả mẫu xe</h3></div>
+          <div class="row"><a href="#">Tất cả mẫu xe</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Dịch vụ khách hàng</h3></div>
+          <div class="row"><a href="#">Đăng ký lái thử</a></div>
+          <div class="row"><a href="#">Liên hệ chúng tôi</a></div>
+          <div class="row"><a href="#">Xưởng dịch vụ</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Audi Việt Nam</h3></div>
+          <div class="row"><a href="#">Thông tin đại lý</a></div>
+          <div class="row"><a href="#">Tuyển dụng</a></div>
+          <div class="row"><a href="#">Tin tức & Sự kiện</a></div>
+        </div>
+        <div class="col">
+          <div class="scrolltoTop" onclick="scrolltoTop()">
+            Trở về đầu trang <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="scrolltoTop-mobile" onclick="scrolltoTop()">
+        Trở về đầu trang <i class="ri-arrow-up-line"></i>
+      </div>
+    </section>
+    <script src="../js/car.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/local.js"></script>
+  </body>
+</html>

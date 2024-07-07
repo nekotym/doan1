@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài khoản</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+  </head>
+  <body
+    class="usbd"
+    onload="loadLocal(),render() , renderListOD(), renderWhiteList(), logintk()"
+  >
+    <div id="toastBox"></div>
+    <input type="checkbox" id="toggle" class="checkbox" />
+    <section id="header">
+      <a href="../index.html" style="text-decoration: none">
+        <div class="logo-admin black">
+          <ul class="logo-admin-ul">
+            <li><span>ĐỨC ANH AUDI</span></li>
+            <li><span>ANH AUDI 88</span></li>
+          </ul>
+        </div>
+      </a>
+      <div>
+        <label class="toggle" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul id="nav" class="nav">
+          <li class="nav-item"><a href="../html/mauxe.html"> MẪU XE</a></li>
+          <li class="nav-item"><a href="../html/dichvu.html"> DỊCH VỤ</a></li>
+          <li class="nav-item">
+            <a href="../html/gioithieu.html"> GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item account">
+            <a href="../html/dangnhap.html"> TÀI KHOẢN</a>
+          </li>
+          <li class="nav-item profile active">
+            <a class="active" href="../html/user.html"
+              ><span class="userlg"></span
+            ></a>
+            <span
+              class="tttk"
+              title="Hãy cập nhật thông tin tài khoản để bảo mật"
+            >
+              <i class="ri-error-warning-fill"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="user-infor">
+      <div class="user-title">Thông tin tài khoản</div>
+      <div class="user-container" id="userCon"></div>
+    </section>
+    <section class="user-order">
+      <div class="user-title">Danh sách đơn đăng ký</div>
+      <div id="usorder">
+        <table
+          id="user-ord"
+          style="text-align: center; width: 100%"
+          class="bang-don-hang"
+        ></table>
+      </div>
+      <input id="index" type="hidden" />
+    </section>
+    <section class="user-whitelist">
+      <div class="user-title">Bạn đã thích</div>
+      <div id="uswlist">
+        <div class="uswl"></div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container-footer">
+        <div class="col">
+          <div class="heading-fot"><h3>Tất cả mẫu xe</h3></div>
+          <div class="row"><a href="#">Tất cả mẫu xe</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Dịch vụ khách hàng</h3></div>
+          <div class="row"><a href="#">Đăng ký lái thử</a></div>
+          <div class="row"><a href="#">Liên hệ chúng tôi</a></div>
+          <div class="row"><a href="#">Xưởng dịch vụ</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Audi Việt Nam</h3></div>
+          <div class="row"><a href="#">Thông tin đại lý</a></div>
+          <div class="row"><a href="#">Tuyển dụng</a></div>
+          <div class="row"><a href="#">Tin tức & Sự kiện</a></div>
+        </div>
+        <div class="col">
+          <div class="scrolltoTop" onclick="scrolltoTop()">
+            Trở về đầu trang <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="scrolltoTop-mobile" onclick="scrolltoTop()">
+        Trở về đầu trang <i class="ri-arrow-up-line"></i>
+      </div>
+    </section>
+    <div id="pu1" class="popup-outer">
+      <div class="popup-box user">
+        <i
+          class="ri-close-circle-fill close dong-popup"
+          onclick="window.location.reload()"
+        ></i>
+        <div class="profile-text">
+          <div class="text">SỬA THÔNG TIN</div>
+          <div class="editor-user">
+            <div class="input-control">
+              <label for="user-user-edit" style="color: #000"
+                >Tai khoan:
+                <span id="user-user-edit" style="font-weight: 600"></span
+              ></label>
+            </div>
+            <div class="upload-img-us">
+              <input type="file" id="file-us" accept="image/*" hidden />
+              <div class="img-area-us" id="img-us" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Ảnh</p>
+                <img id="anh-us" />
+              </div>
+              <label class="select-image-us" for="file-us">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-user-edit" required />
+              <div class="underline"></div>
+              <label for="name-user-edit">Ho va ten</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="email-user-edit" required />
+              <div class="underline"></div>
+              <label for="email-user-edit">Email</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="date" id="born-user-edit" required />
+              <div class="underline"></div>
+              <label for="born-user-edit">Ngay sinh</label>
+              <div class="error"></div>
+            </div>
+            <input type="hidden" id="index-user" />
+          </div>
+          <div class="butons">
+            <button class="dong-y-sua" onclick="doinguoidung()">Lưu</button>
+            <button class="dong-popup" onclick="window.location.reload()">
+              Hủy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pu10" class="popup-outer">
+      <div class="popup-box">
+        <i
+          class="ri-close-circle-fill close dong-popup"
+          onclick="window.location.reload()"
+        ></i>
+        <div class="profile-text">
+          <div class="text">ĐỔI MẬT KHẨU</div>
+          <div
+            class="editor-user"
+            style="text-align: left; justify-content: left"
+          >
+            <div class="input-control">
+              <input type="password" id="pass1-user-edit" required />
+              <div class="underline"></div>
+              <label for="pass1-user-edit">Mật khẩu cũ</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="password" id="pass2-user-edit" required />
+              <div class="underline"></div>
+              <label for="pass2-user-edit">Mật khẩu mới</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="password" id="repass2-user-edit" required />
+              <div class="underline"></div>
+              <label for="repass2-user-edit">Nhập lại mật khẩu mới</label>
+              <div class="error"></div>
+            </div>
+            <input type="hidden" id="index-user" />
+          </div>
+          <div class="butons">
+            <button class="dong-y-sua" onclick="doimatkhau()">Lưu</button>
+            <button class="dong-popup" onclick="window.location.reload()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pu2" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn có muốn đăng xuất?
+        </div>
+
+        <button type="button" onclick="dangxuat()" class="dong-popup">
+          Đăng xuất
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+    </div>
+    <div id="pu9" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn có muốn hủy đơn?
+        </div>
+        <button type="button" class="dong-popup yeu-cau" onclick="yeuCau()">
+          Đồng ý
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+    </div>
+    <div id="pu11" class="popup-outer">
+      <div class="popup-box">
+        <!-- <i class="ri-close-circle-fill close dong-popup"></i> -->
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Đổi mật khẩu thành công, vui lòng đăng nhập lại!
+        </div>
+        <!-- <button type="button" class="dong-popup yeu-cau" onclick="yeuCau()">
+          Đồng ý
+        </button> -->
+        <button class="dong-popup" onclick="dangxuat()">OK</button>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="../js/car.js"></script> -->
+  <script src="../js/user.js"></script>
+  <script src="../js/listxe.js"></script>
+  <script src="../js/local.js"></script>
+</html>

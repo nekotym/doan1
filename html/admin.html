@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+  </head>
+  <body
+    class="adm"
+    onload="loadLocal(),renderList(), renderListCC(), renderListCP(), renderListAccount(), renderListAdminAccount(), renderSetting(), chart(),slxdb(),renderKHO(),renderNV()"
+  >
+    <div id="toastBox"></div>
+    <div class="admin-container">
+      <div class="admin-navigation">
+        <div class="menuToggle"></div>
+        <ul>
+          <li class="list tab_item active">
+            <a href="#">
+              <span class="admin-icon"><i class="ri-home-line"></i></span>
+              <span class="admin-title">Tổng quan</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <div class="number dki" id="nb-dki">0</div>
+            <a href="#">
+              <span class="admin-icon"><i class="ri-list-ordered"></i></span>
+              <span class="admin-title">Đơn đăng ký</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <div class="number huy" id="nb-huy">0</div>
+            <a href="#">
+              <span class="admin-icon"><i class="ri-list-unordered"></i></span>
+              <span class="admin-title">Yêu cầu hủy đơn</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <div class="number hoanthanh" id="nb-hoanthanh">0</div>
+            <a href="#">
+              <span class="admin-icon"><i class="ri-check-line"></i></span>
+              <span class="admin-title">Đơn đã thanh toán</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <a href="#">
+              <span class="admin-icon"
+                ><i class="ri-shield-user-line"></i
+              ></span>
+              <span class="admin-title">Admin accounts</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <a href="#">
+              <span class="admin-icon"
+                ><i class="ri-account-circle-line"></i
+              ></span>
+              <span class="admin-title">User accounts</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <a href="#">
+              <span class="admin-icon"><i class="ri-car-line"></i></span>
+              <span class="admin-title">Kho xe</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <a href="#">
+              <span class="admin-icon"><i class="ri-team-line"></i></span>
+              <span class="admin-title">Nhân sự</span>
+            </a>
+          </li>
+          <li class="list tab_item">
+            <a href="#">
+              <span class="admin-icon"><i class="ri-settings-line"></i></span>
+              <span class="admin-title">Cài đặt</span>
+            </a>
+          </li>
+          <li class="list dang-xuat tab_item">
+            <a href="#">
+              <span class="admin-icon"><i class="ri-logout-box-line"></i></span>
+              <span class="admin-title">Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="admin-main">
+        <div class="admin-top-bar">
+          <div class="logo-admin">
+            <ul class="logo-admin-ul">
+              <li><span>ĐỨC ANH AUDI</span></li>
+              <li><span>ANH AUDI 88</span></li>
+            </ul>
+          </div>
+          <div class="admin-account">
+            <img src="" alt="" id="avt-admin-img" />
+          </div>
+        </div>
+        <div class="tab_content">
+          <div class="tab_pane active">
+            <h2>Tổng quan</h2>
+            <div class="cardBox">
+              <div class="card">
+                <div>
+                  <div class="numbers access">1000</div>
+                  <div class="cardName">Số lượt truy cập</div>
+                </div>
+                <div class="iconBx">
+                  <i class="ri-eye-line"></i>
+                </div>
+              </div>
+
+              <div class="card">
+                <div>
+                  <div class="numbers car-sell">1000</div>
+                  <div class="cardName">Số xe đã bán</div>
+                </div>
+                <div class="iconBx">
+                  <i class="ri-car-line"></i>
+                </div>
+              </div>
+
+              <div class="card">
+                <div>
+                  <div class="numbers earning">1000</div>
+                  <div class="cardName">Thu nhập (VND)</div>
+                </div>
+                <div class="iconBx">
+                  <i class="ri-bank-card-line"></i>
+                </div>
+              </div>
+            </div>
+            <div class="graphBox">
+              <div class="box chart">
+                <!-- <canvas id="myChart" width="600px" height="300px"></canvas> -->
+              </div>
+              <div class="box earning">
+                <!-- <canvas id="earning"></canvas> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="tab_pane">
+            <h2>Quản lý đơn hàng</h2>
+            <section class="admin-table">
+              <h3>Danh sách đăng ký</h3>
+              <table id="table-order" class="bang-don-hang"></table>
+            </section>
+          </div>
+
+          <div class="tab_pane">
+            <h2>Quản lý đơn hàng</h2>
+            <section class="admin-table">
+              <h3>Danh sách yêu cầu hủy đăng ký</h3>
+              <table id="table-cancel" class="bang-don-hang"></table>
+            </section>
+          </div>
+
+          <div class="tab_pane">
+            <h2>Quản lý đơn hàng</h2>
+            <section class="admin-table">
+              <h3>Danh sách đơn đã thanh toán</h3>
+              <table id="table-thanhtoan" class="bang-don-hang"></table>
+            </section>
+          </div>
+          <div class="tab_pane">
+            <h2>Tài khoản quản lý</h2>
+            <section class="admin-table">
+              <h3>Danh sách tài khoản quản trị</h3>
+              <table id="table-admin" class="bang-don-hang"></table>
+            </section>
+          </div>
+          <div class="tab_pane">
+            <h2>Tài khoản người dùng</h2>
+            <section class="admin-table">
+              <h3>Danh sách tài khoản người dùng</h3>
+              <table id="table-nguoidung" class="bang-don-hang"></table>
+            </section>
+          </div>
+          <div class="tab_pane">
+            <h2>Kho xe</h2>
+
+            <section>
+              <button onclick="ADDNEWCAR()" class="themmoi">Thêm xe mới</button>
+            </section>
+            <section class="xe-sll">
+              <div class="srcar">
+                <h2 class="srpc">A Series</h2>
+                <div>Đã bán: <span class="db A"></span> xe</div>
+                <div>Số lượng còn lại: <span class="slxe A"></span> xe</div>
+              </div>
+              <div class="xe-container-sll Aseries"></div>
+              <div class="srcar">
+                <h2 class="srpc">e-tron Series</h2>
+                <div>Đã bán: <span class="db E"></span> xe</div>
+                <div>Số lượng còn lại: <span class="slxe E"></span> xe</div>
+              </div>
+              <div class="xe-container-sll e-tronseries"></div>
+              <div class="srcar">
+                <h2 class="srpc">Q Series</h2>
+                <div>Đã bán: <span class="db Q"></span> xe</div>
+                <div>Số lượng còn lại: <span class="slxe Q"></span> xe</div>
+              </div>
+              <div class="xe-container-sll Qseries"></div>
+            </section>
+          </div>
+          <div class="tab_pane">
+            <h2>Quản lý nhân viên</h2>
+            <section>
+              <button
+                onclick="ADDNEWNV()"
+                class="themmoi"
+                style="border-radius: 0"
+              >
+                Thêm nhân viên mới
+              </button>
+            </section>
+            <div class="container_nv" id="table-nhanvien"></div>
+          </div>
+          <div class="tab_pane">
+            <h2>Phiên đăng nhập</h2>
+            <section class="admin-table">
+              <h3>Thông tin phiên đăng nhập</h3>
+              <div id="table-caidat"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pued" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="profile-text">
+          <div class="text" id="sua-title">SỬA THÔNG TIN ĐƠN HÀNG</div>
+          <div class="form-edit-input" id="editform">
+            <div class="input-control">
+              <input type="text" id="name-edit" required />
+              <div class="underline"></div>
+              <label for="name-edit">Họ và tên</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="address-edit" required />
+              <div class="underline"></div>
+              <label for="address-edit">Địa chỉ</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="mail-edit" required />
+              <div class="underline"></div>
+              <label for="mail-edit">Email</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="phone-edit" required />
+              <div class="underline"></div>
+              <label for="phone-edit">Số điện thoại</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="note-edit" required />
+              <div class="underline"></div>
+              <label for="note-edit">Ghi chú</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-form">
+              <input id="index" type="hidden" />
+            </div>
+          </div>
+          <div class="butons">
+            <button
+              class="edit"
+              type="button"
+              id="update-btn"
+              onclick="changeData()"
+            >
+              Sửa
+            </button>
+            <button class="dong-popup edit">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pu3" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn có muốn xóa?
+        </div>
+        <button type="button" onclick="deleteOD()" class="dong-popup">
+          Xóa
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+    </div>
+    <div id="puht" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Đơn đã hoàn thành?
+        </div>
+        <button type="button" onclick="dathanhtoan()" class="dong-popup">
+          <i class="ri-check-double-line"></i>
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+    </div>
+    <div id="pucfdel" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn muốn xóa xe?
+        </div>
+        <button type="button" onclick="xoaCARINFO()" class="dong-popup">
+          <i class="ri-close-fill"></i>
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+      <input type="hidden" id="cf-del" />
+    </div>
+    <div id="pu2" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn có muốn đăng xuất?
+        </div>
+
+        <button type="button" onclick="dangxuat()" class="dong-popup">
+          Đăng xuất
+        </button>
+        <button class="dong-popup" onclick="window.location.reload()">
+          Hủy
+        </button>
+      </div>
+    </div>
+    <div id="puedc" class="popup-outer">
+      <div class="popup-box editcar">
+        <i
+          class="ri-close-circle-fill close dong-popup"
+          onclick="resetINPUT()"
+        ></i>
+        <div class="profile-text">
+          <div class="text" id="them-car-title">THÊM XE</div>
+          <div class="text" id="sua-car-title">SỬA XE</div>
+          <div class="form-edit-input car" id="editform">
+            <div class="input-control">
+              <input type="text" id="name-car" required />
+              <div class="underline"></div>
+              <label for="name-car">Tên xe</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="number" id="slx-car" required />
+              <div class="underline"></div>
+              <label for="name-car">So luong</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="number" id="price-car" required />
+              <div class="underline"></div>
+              <label for="name-car">Gia xe</label>
+              <div class="error"></div>
+            </div>
+
+            <div class="select-menu">
+              <div class="select-btn">
+                <option class="sBtn-text" id="kind-car" value="0">
+                  Chọn mẫu xe
+                </option>
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+              <ul class="options">
+                <li class="option">
+                  <option value="A Series" class="option-text">A Series</option>
+                </li>
+                <li class="option">
+                  <option value="e-tron Series" class="option-text">
+                    e-tron Series
+                  </option>
+                </li>
+                <li class="option">
+                  <option value="Q Series" class="option-text">Q Series</option>
+                </li>
+              </ul>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên ảnh 1</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file1" accept="image/*" hidden />
+              <div class="img-area" id="img-1" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Ảnh 1</p>
+                <img id="anh1" />
+              </div>
+              <label class="select-image" for="file1">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên ảnh 2</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file2" accept="image/*" hidden />
+              <div class="img-area" id="img-2" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Ảnh 2</p>
+                <img id="anh2" />
+              </div>
+              <label class="select-image" for="file2">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 1</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file3" accept="image/*" hidden />
+              <div class="img-area" id="img-3" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 1</p>
+                <img id="anh3" />
+              </div>
+              <label class="select-image" for="file3">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-1" required />
+              <div class="underline"></div>
+              <label for="name-color-1">Tên màu 1</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-1" required />
+              <div class="underline"></div>
+              <label for="name-tag-1">Mô tả màu 1</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 2</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file4" accept="image/*" hidden />
+              <div class="img-area" id="img-4" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 2</p>
+                <img id="anh4" />
+              </div>
+              <label class="select-image" for="file4">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-2" required />
+              <div class="underline"></div>
+              <label for="name-color-2">Tên màu 2</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-2" required />
+              <div class="underline"></div>
+              <label for="name-tag-2">Mô tả màu 2</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 3</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file5" accept="image/*" hidden />
+              <div class="img-area" id="img-5" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 3</p>
+                <img id="anh5" />
+              </div>
+              <label class="select-image" for="file5">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-3" required />
+              <div class="underline"></div>
+              <label for="name-color-3">Tên màu 3</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-3" required />
+              <div class="underline"></div>
+              <label for="name-tag-3">Mô tả màu 3</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 4</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file6" accept="image/*" hidden />
+              <div class="img-area" id="img-6" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 4</p>
+                <img id="anh6" />
+              </div>
+              <label class="select-image" for="file6">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-4" required />
+              <div class="underline"></div>
+              <label for="name-color-4">Tên màu 4</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-4" required />
+              <div class="underline"></div>
+              <label for="name-tag-4">Mô tả màu 4</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 5</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file7" accept="image/*" hidden />
+              <div class="img-area" id="img-7" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 5</p>
+                <img id="anh7" />
+              </div>
+              <label class="select-image" for="file7">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-5" required />
+              <div class="underline"></div>
+              <label for="name-color-5">Tên màu 5</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-5" required />
+              <div class="underline"></div>
+              <label for="name-tag-5">Mô tả màu 5</label>
+            </div>
+            <div class="input-control">
+              <label style="padding: 0; color: black; font-size: 20px; right: 0"
+                >Tải lên màu xe 6</label
+              >
+            </div>
+            <div class="upload-img">
+              <input type="file" id="file8" accept="image/*" hidden />
+              <div class="img-area" id="img-8" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Màu 6</p>
+                <img id="anh8" />
+              </div>
+              <label class="select-image" for="file8">Tải lên</label>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-color-6" required />
+              <div class="underline"></div>
+              <label for="name-color-6">Tên màu 6</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="name-tag-6" required />
+              <div class="underline"></div>
+              <label for="name-tag-6">Mô tả màu 6</label>
+            </div>
+            <input id="index-this-car" type="hidden" />
+          </div>
+        </div>
+        <div class="butons" id="BTN-edit">
+          <button
+            class="edit"
+            type="button"
+            id="update-car-btn"
+            onclick="suaCARINFO()"
+          >
+            Sửa
+          </button>
+          <button
+            class="edit"
+            onclick="themCAR()"
+            type="button"
+            id="add-car-btn"
+          >
+            Thêm
+          </button>
+          <button class="dong-popup edit" onclick="resetINPUT()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="punhanvien" class="popup-outer">
+      <div class="popup-box nv">
+        <i
+          class="ri-close-circle-fill close dong-popup"
+          onclick="resetINPUTNV()"
+        ></i>
+        <div class="profile-text">
+          <div class="text" id="them-nv-title">THÊM NHÂN VIÊN</div>
+          <div class="text" id="sua-nv-title">SỬA NHÂN VIÊN</div>
+          <div class="form-edit-input nv" id="editform">
+            <div class="input-control">
+              <input type="text" id="name-nv" required />
+              <div class="underline"></div>
+              <label for="name-nv">Tên nhân viên</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="date" id="born-nv" required />
+              <div class="underline"></div>
+              <label for="born-nv">Ngày sinh</label>
+              <div class="error"></div>
+            </div>
+
+            <div class="select-menu-nv">
+              <div class="select-btn-nv">
+                <option class="sBtn-text-nv" id="kind-nv" value="0">
+                  Chức vụ
+                </option>
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+              <ul class="options-nv">
+                <li class="option-nv">
+                  <option value="Quản lý" class="option-text-nv">
+                    Quản lý
+                  </option>
+                </li>
+                <li class="option-nv">
+                  <option value="Trưởng phòng" class="option-text-nv">
+                    Trưởng phòng
+                  </option>
+                </li>
+                <li class="option-nv">
+                  <option value="Kỹ thuật viên" class="option-text-nv">
+                    Kỹ thuật viên
+                  </option>
+                </li>
+                <li class="option-nv">
+                  <option value="Nhân viên" class="option-text-nv">
+                    Nhân viên
+                  </option>
+                </li>
+              </ul>
+            </div>
+            <div class="select-menu-phongban">
+              <div class="select-btn-phongban">
+                <option class="sBtn-text-phongban" id="kind-phongban" value="0">
+                  Phòng ban
+                </option>
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+              <ul class="options-phongban">
+                <li class="option-phongban">
+                  <option value="Điều hành" class="option-text-phongban">
+                    Điều hành
+                  </option>
+                </li>
+                <li class="option-phongban">
+                  <option value="Kế toán" class="option-text-phongban">
+                    Kế toán
+                  </option>
+                </li>
+                <li class="option-phongban">
+                  <option value="Hỗ trợ" class="option-text-phongban">
+                    Hỗ trợ
+                  </option>
+                </li>
+                <li class="option-phongban">
+                  <option value="Hành chính" class="option-text-phongban">
+                    Hành chính
+                  </option>
+                </li>
+              </ul>
+            </div>
+            <div class="input-control">
+              <input type="text" id="sdt-nv" required />
+              <div class="underline"></div>
+              <label for="sdt-nv">Số điện thoại</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="email-nv" required />
+              <div class="underline"></div>
+              <label for="email-nv">Email</label>
+              <div class="error"></div>
+            </div>
+            <div class="upload-img-nv">
+              <input type="file" id="file-nv" accept="image/*" hidden />
+              <div class="img-area" id="img-nv" data-img="">
+                <i class="ri-upload-cloud-2-line icon"></i>
+                <p>Ảnh</p>
+                <img id="anh-nv" />
+              </div>
+              <label class="select-image-nv" for="file-nv">Tải lên</label>
+            </div>
+
+            <input id="index-this-nv" type="hidden" />
+          </div>
+        </div>
+        <div class="butons" id="BTN-edit">
+          <button
+            class="edit"
+            type="button"
+            id="update-nv-btn"
+            onclick="suaNVINFO()"
+          >
+            Sửa
+          </button>
+          <button class="edit" onclick="themNV()" type="button" id="add-nv-btn">
+            Thêm
+          </button>
+          <button class="dong-popup edit" onclick="resetINPUTNV()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="pucfdelnv" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"></i>
+          Bạn muốn sai thải nhân viên này?
+        </div>
+        <button type="button" onclick="xoaNVINFO()" class="dong-popup">
+          <i class="ri-close-fill"></i>
+        </button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+      <input type="hidden" id="cf-del-nv" />
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="../js/adminsuathongtin.js"></script>
+  <script src="../js/admins.js"></script>
+  <script src="../js/local.js"></script>
+</html>

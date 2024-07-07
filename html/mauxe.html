@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mẫu xe</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+  </head>
+  <body onload="loadLocal(),logintk(),renderMAUXE()">
+    <div id="toastBox"></div>
+
+    <input type="checkbox" id="toggle" class="checkbox" />
+    <section id="header">
+      <a href="../index.html" style="text-decoration: none">
+        <div class="logo-admin black">
+          <ul class="logo-admin-ul">
+            <li><span>ĐỨC ANH AUDI</span></li>
+            <li><span>ANH AUDI 88</span></li>
+          </ul>
+        </div>
+      </a>
+      <div>
+        <label class="toggle" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul id="nav" class="nav">
+          <li class="nav-item">
+            <a href="../html/mauxe.html" class="active"> MẪU XE</a>
+          </li>
+          <li class="nav-item"><a href="../html/dichvu.html"> DỊCH VỤ</a></li>
+          <li class="nav-item">
+            <a href="../html/gioithieu.html"> GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item account">
+            <a href="../html/dangnhap.html"> TÀI KHOẢN</a>
+          </li>
+          <li class="nav-item profile">
+            <a href="../html/user.html"><span class="userlg"></span></a>
+            <span
+              class="tttk"
+              title="Hãy cập nhật thông tin tài khoản để bảo mật"
+            >
+              <i class="ri-error-warning-fill"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="series">
+      <section id="A-Series">
+        <div id="title" class="title">Audi A Series</div>
+        <div id="carAinseries" class="container-xe">
+          <div class="onlycar">
+            <div class="this-name-car">Day la ten xe</div>
+            <div class="this-img-car">
+              <img src="../xe/a4sedan-2.png" alt="" class="this-car" />
+            </div>
+            <button class="truy-cap">Xem chi tiết</button>
+          </div>
+          <div class="onlycar">
+            <div class="this-name-car">Day la ten xe</div>
+            <div class="this-img-car">
+              <img src="../xe/a4sedan-2.png" alt="" class="this-car" />
+            </div>
+            <button class="truy-cap">Xem chi tiết</button>
+          </div>
+          <div class="onlycar">
+            <div class="this-name-car">Day la ten xe</div>
+            <div class="this-img-car">
+              <img src="../xe/a4sedan-2.png" alt="" class="this-car" />
+            </div>
+            <button class="truy-cap">Xem chi tiết</button>
+          </div>
+          <div class="onlycar">
+            <div class="this-name-car">Day la ten xe</div>
+            <div class="this-img-car">
+              <img src="../xe/a4sedan-2.png" alt="" class="this-car" />
+            </div>
+            <button class="truy-cap">Xem chi tiết</button>
+          </div>
+        </div>
+      </section>
+      <section id="e-tron-Series">
+        <div id="title" class="title">Audi e-tron Series</div>
+        <div id="carEinseries" class="container-xe"></div>
+      </section>
+      <section id="Q-Series">
+        <div id="title" class="title">Audi Q Series</div>
+        <div id="carQinseries" class="container-xe"></div>
+      </section>
+    </section>
+    <section class="footer">
+      <div class="container-footer">
+        <div class="col">
+          <div class="heading-fot"><h3>Tất cả mẫu xe</h3></div>
+          <div class="row"><a href="#">Tất cả mẫu xe</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Dịch vụ khách hàng</h3></div>
+          <div class="row"><a href="#">Đăng ký lái thử</a></div>
+          <div class="row"><a href="#">Liên hệ chúng tôi</a></div>
+          <div class="row"><a href="#">Xưởng dịch vụ</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Audi Việt Nam</h3></div>
+          <div class="row"><a href="#">Thông tin đại lý</a></div>
+          <div class="row"><a href="#">Tuyển dụng</a></div>
+          <div class="row"><a href="#">Tin tức & Sự kiện</a></div>
+        </div>
+        <div class="col">
+          <div class="scrolltoTop" onclick="scrolltoTop()">
+            Trở về đầu trang <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="scrolltoTop-mobile" onclick="scrolltoTop()">
+        Trở về đầu trang <i class="ri-arrow-up-line"></i>
+      </div>
+    </section>
+  </body>
+  <script src="../js/listxe.js"></script>
+  <script src="../js/user.js"></script>
+  <script src="../js/local.js"></script>
+</html>

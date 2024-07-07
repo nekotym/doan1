@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="ten-xe-hientai">Ten xe</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+  </head>
+  <!-- <body class="car-bd" onload="renderLikeBtn(),logintk()"> -->
+  <body
+    class="car-bd"
+    onload="loadLocal(),CarLOADER() ,logintk(),renderLikeBtn()"
+  >
+    <div id="toastBox"></div>
+    <input type="hidden" id="car-loader" />
+    <input type="checkbox" id="toggle" class="checkbox" />
+    <section id="header">
+      <a href="../index.html" style="text-decoration: none">
+        <div class="logo-admin black">
+          <ul class="logo-admin-ul">
+            <li><span>ĐỨC ANH AUDI</span></li>
+            <li><span>ANH AUDI 88</span></li>
+          </ul>
+        </div>
+      </a>
+      <div>
+        <label class="toggle" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul id="nav" class="nav">
+          <li class="nav-item"><a href="../html/mauxe.html"> MẪU XE</a></li>
+          <li class="nav-item"><a href="../html/dichvu.html"> DỊCH VỤ</a></li>
+          <li class="nav-item">
+            <a href="../html/gioithieu.html"> GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item account">
+            <a href="../html/dangnhap.html"> TÀI KHOẢN</a>
+          </li>
+          <li class="nav-item profile">
+            <a href="../html/user.html"><span class="userlg"></span></a>
+            <span
+              class="tttk"
+              title="Hãy cập nhật thông tin tài khoản để bảo mật"
+            >
+              <i class="ri-error-warning-fill"></i>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section></section>
+    <div class="like-btn"></div>
+    <section class="body-page" style="position: relative"></section>
+    <section class="video-review">
+      <h1 class="tquan">TỔNG QUAN</h1>
+      <video autoplay loop muted plays-inline>
+        <source src="../AUDI/a4video.mp4" />
+      </video>
+    </section>
+    <section class="thongso">
+      <div class="heading car">
+        <h1>Thể thao từ mọi góc nhìn</h1>
+        <h4>
+          Audi A4 là viết tắt cho tính thể thao, uy tín và cảm xúc. Bằng cách
+          tập trung vào các chi tiết năng động đặc trưng quattro với tỷ lệ hài
+          hòa, các thuộc tính này hiển thị một cách rõ ràng. Ở phía sau, một
+          thanh crom ngang nổi bật bắt nối giữa hai đèn hậu đồng thời nhấn mạnh
+          ấn tượng chiều rộng. Hai ống xả hình thang thể thao nằm chìm trong ốp
+          bộ khuếch tán phía sau. Nhìn từ phía bên, các đường gân thể thao nổi
+          bật kết hợp với các vòm bánh xe nhấn mạnh đặc trưng quattro. Đi kèm là
+          bộ mâm hợp kim phong cách 17-inch với thiết kế 5 chấu năng động, tùy
+          chọn mở rộng lên đến mâm 19-inch. Ở phần đầu xe, lưới tản nhiệt được
+          thiết kế dạng khung đơn sâu và rộng, kết hợp với phần cản trước và các
+          khe hút gió tạo thành điểm nhấn mạnh mẽ.
+        </h4>
+      </div>
+    </section>
+    <section class="tsso">
+      <div class="container-thongso">
+        <div class="slilds">
+          <input
+            type="radio"
+            class="radio"
+            name="images"
+            id="radio-1"
+            checked
+          />
+          <input type="radio" class="radio" name="images" id="radio-2" />
+          <input type="radio" class="radio" name="images" id="radio-3" />
+          <input type="radio" class="radio" name="images" id="radio-4" />
+          <div class="slild" id="slild-1">
+            <img src="../AUDI/a4sedan1.jpg" alt="" />
+            <div class="caption">
+              <h1>Nội thất rộng rãi với chất lượng đẳng cấp</h1>
+              <h3>
+                Trong không gian nội thất của Audi A4, bạn sẽ trải nghiệm được
+                một không gian rộng rãi với các yếu tố được sắp xếp để tối ưu
+                hóa ánh sáng. Các đường viền chrome tạo ấn tượng mạnh mẽ và nhấn
+                mạnh chiều rộng của xe. Một ngăn chứa đồ lớn được thiết kế trên
+                ốp trung tâm mang lại tính tiện dụng cao. Ánh sáng nội thất tiêu
+                chuẩn bao gồm cả đèn đọc sách ở hàng ghế trên. Gói tùy chọn ánh
+                nội thất màu trắng làm tăng thêm bầu không khí dễ chịu. Ngoài
+                ra, Audi A4 cũng có sẵn các phiên bản Audi A4 Advanced và S
+                line.
+              </h3>
+            </div>
+          </div>
+
+          <div class="slild" id="slild-2">
+            <img src="../AUDI/a4sedan2.jpg" alt="" />
+            <div class="caption">
+              <h1>Thiết lập xu hướng công nghệ</h1>
+              <h3>
+                Nhờ khái niệm vận hành trực quan thông qua các chức năng cảm
+                ứng, Audi A4 đem lại một trải nghiệm sử dụng dễ dàng thân thiện.
+                Ngoài ra bạn có thể lựa chọn những tùy chọn công nghệ về thông
+                tin giải trí như buồng lái ảo kỹ thuật số ảo Audi virtual
+                cockpit. Màn hình 12.3-inch của nó sẽ hiển thị rõ ràng các thông
+                tin quan trọng với độ phân giải Full HD, bao gồm hiển thị tốc độ
+                và các thông số vận hành của xe.
+              </h3>
+            </div>
+          </div>
+
+          <div class="slild" id="slild-3">
+            <img src="../AUDI/a4sedan3.jpg" alt="" />
+            <div class="caption">
+              <h1>Động cơ mạnh mẽ</h1>
+              <h3>
+                Chúng tôi đem đến các tùy chọn động cơ xăng 2.0 TFSI khác nhau
+                cho Audi A4. Bạn có thể chọn phiên bản động cơ xăng 2.0 - 40
+                TFSI cho công suất 140 kW (190 mã lực) hoặc phiên bản Audi A4 45
+                TFSI quattro với công suất 180 kW (245 mã lực). Phiên bản sau
+                mang tính công nghệ cao với hệ dẫn động bốn bánh quattro được
+                kích hoạt chỉ trong vài mili-giây khi có tình huống lái xe yêu
+                cầu, đảm bảo vận hạnh mạnh mẽ và năng động. Hệ thống mild hybrid
+                12-volts cùng máy phát khởi động lại và Pin Li-ion cho phép động
+                cơ có thể tự động ngắt trong lúc vận hành - chế độ này được gọi
+                là chạy trơn. Điều này giúp giảm mức tiêu thụ nhiên liệu đáng
+                kể.
+              </h3>
+            </div>
+          </div>
+
+          <div class="slild" id="slild-4">
+            <img src="../AUDI/a4sedan4.jpg" alt="" />
+            <div class="caption">
+              <h1>Tính năng ánh sáng vượt trội</h1>
+              <h3>
+                Một điểm dễ nhận thấy trên Audi A4 chính là thiết kế ánh sáng
+                tân tiến. Đèn pha sử dụng công nghệ LED được trang bị tiêu
+                chuẩn. Chúng đảm bảo đem lại ánh sáng thật như ban ngày khi sử
+                dụng. Ngoài ra, bạn có thể tùy chọn đèn pha LED Matrix với hiệu
+                ứng chiếu sáng năng động cùng đèn xi nhan chạy tia năng động.
+                Công nghệ LED Matrix kết hợp với hệ thống camera cùng nguồn
+                chiếu sáng LED và sáng quang học chuẩn xác. Điều này cho phép hệ
+                thống chiếu sáng có chọn lọc các phương tiện chạy ngược chiều
+                không bị chói mắt. Khi bạn khóa hoặc mở khóa xe, đèn pha phía
+                trước sẽ cho một màn trình diễn ánh sáng ấn tượng. Cũng như ở
+                phía sau, đèn hậu LED cũng có một màn trình diễn ấn tượng kết
+                hợp đèn báo rẽ chạy tia năng động.
+              </h3>
+            </div>
+          </div>
+          <div class="dots">
+            <label for="radio-1" id="label-1"></label>
+            <label for="radio-2" id="label-2"></label>
+            <label for="radio-3" id="label-3"></label>
+            <label for="radio-4" id="label-4"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="counter-up congsuat" id="congsuat">
+      <div class="container-cot">
+        <div class="tencot">
+          <div class="tenchiso">Công suất</div>
+          <div class="chiso"><span class="counter">183</span> kW</div>
+        </div>
+        <div class="tencot">
+          <div class="tenchiso">Tăng tốc (0 – 100 km/h)</div>
+          <div class="chiso"><span class="counter">7.3</span> giây</div>
+        </div>
+        <div class="tencot">
+          <div class="tenchiso">Vận tốc tối đa</div>
+          <div class="chiso"><span class="counter">241</span> km/h</div>
+        </div>
+      </div>
+      <div class="note">
+        ¹ Mức tiêu thụ nhiên liệu kết hợp: A4 40 TFSI 6.0 - 5.8 lít / 100 km; A4
+        45 TFSI quattro 6.8 - 6.5 lít / 100 km.
+      </div>
+    </section>
+    <section class="thongso">
+      <div class="heading car">
+        <h1>Sạc tại nhà và khi đi trên đường</h1>
+        <h4>
+          Bộ pin lithium-ion 800 volt được tích hợp vào phần sàn xe mang lại
+          hiệu suất cao - cả khi sạc và khi lái xe. Kết hợp với hệ thống phục
+          hồi giúp cho phạm vi di chuyển của chiếc xe có thể lên đến 488 km được
+          kiểm chứng bởi WLTP (Mức tiêu thụ điện năng kết hợp tính bằng kWh/100
+          km: 19,6 – 18,8 (NEDC); 21.8 – 19.9 (WLTP); Lượng phát thải khí CO₂
+          kết hợp tính bằng g/km: 0; Những thông số tiêu thụ điện năng và phát
+          thải khí CO₂ sẽ tùy thuộc vào phạm vi di chuyển cũng như thiết bị được
+          tùy chọn cho xe).
+        </h4>
+      </div>
+    </section>
+    <section class="counter-up congsuat" id="congsuat">
+      <div class="container-cot">
+        <div class="tencot">
+          <div class="tenchiso">Sạc Pin từ 5% đến 80% chỉ trong</div>
+          <div class="chiso"><span class="counter">22.5</span> phút</div>
+          <div class="chiso-duoi">(trong điều kiện lý tưởng)</div>
+        </div>
+        <div class="tencot">
+          <div class="tenchiso">Hệ thống sạc</div>
+          <div class="chiso"><span class="counter"> 800</span> volt</div>
+          <div class="chiso-duoi">Công suất tối đa: 270 kW</div>
+        </div>
+        <div class="tencot">
+          <div class="tenchiso">Dung lượng pin (net) lên đến</div>
+          <div class="chiso"><span class="counter">83.7</span> kWh</div>
+        </div>
+      </div>
+      <div class="note">
+        Mức tiêu thụ điện năng kết hợp tính bằng kWh/100km: 19,6 – 18,8 (NEDC);
+        21.8 – 19.9 (WLTP); Lượng phát thải khí CO₂ kết hợp tính bằng g/km: 0;
+        Những thông số tiêu thụ điện năng và phát thải khí CO₂ sẽ tùy thuộc vào
+        phạm vi di chuyển cũng như thiết bị được tùy chọn cho xe.
+      </div>
+    </section>
+    <section class="thongsokythuat">
+      <div class="bangthongso">
+        <div class="tieude">Bảng thông số kỹ thuật</div>
+        <ul id="accordion" class="accordion">
+          <li>
+            <div class="drop">
+              Kích thước
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <ul class="submenu">
+              <table class="table-container">
+                <tr>
+                  <td class="tbl-tskt">Dài x rộng x cao (mm)</td>
+                  <td class="tbl-tskt">4.762 x 1.847 x 1.431</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Chiều dài cơ sở (mm)</td>
+                  <td class="tbl-tskt">2.820</td>
+                </tr>
+              </table>
+            </ul>
+          </li>
+          <li>
+            <div class="drop">
+              Ngoại thất
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <ul class="submenu">
+              <table class="table-container">
+                <tr>
+                  <td class="tbl-tskt">Đèn trước</td>
+                  <td class="tbl-tskt">LED</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn báo hiệu ứng động</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn mở rộng góc chiếu</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Rửa đèn</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn ban ngày</td>
+                  <td class="tbl-tskt">LED độc lập</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn hậu</td>
+                  <td class="tbl-tskt">LED</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Gương chiếu hậu</td>
+                  <td class="tbl-tskt" rowspan="4">Chỉnh điện</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt"></td>
+                  <td class="tbl-tskt">Gập điện</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt"></td>
+                  <td class="tbl-tskt">Sấy nóng</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt"></td>
+                  <td class="tbl-tskt">Đèn báo rẽ LED</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cảm biến gạt mưa</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Viền khung cửa</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Lốp</td>
+                  <td class="tbl-tskt">225/50R17</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">LAdvancedang</td>
+                  <td class="tbl-tskt">17 inch 5 chấu</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Viền bạc ống xả</td>
+                  <td class="tbl-tskt">Không</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Lốp 245/40R18</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+              </table>
+            </ul>
+          </li>
+          <li>
+            <div class="drop">
+              Nội thất
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <ul class="submenu">
+              <table class="table-container">
+                <tr>
+                  <td class="tbl-tskt">Nội thất</td>
+                  <td class="tbl-tskt">Ốp nhôm hoạ tiết</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Vô lăng</td>
+                  <td class="tbl-tskt">Bọc da đa chức năng</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Màn hình hiển thị đa thông tin</td>
+                  <td class="tbl-tskt">Tiêu chuẩn</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Hệ thống khoá xe thông minh</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cruise Control với giới hạn tốc độ</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Start/Stop</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Phanh tay trợ lực điện</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">
+                    Gương chiếu hậu tràn viền chống chói tự động
+                  </td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Chất liệu ghế</td>
+                  <td class="tbl-tskt">Bọc da tổng hợp</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Ghế trước</td>
+                  <td class="tbl-tskt" rowspan="2">Chỉnh điện</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt"></td>
+                  <td class="tbl-tskt">Bơm lưng 4 chiều</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Ghế sau</td>
+                  <td class="tbl-tskt">Không gập</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Điều hoà tự động</td>
+                  <td class="tbl-tskt">3 vùng</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Màn hình trung tâm</td>
+                  <td class="tbl-tskt">10.1 inch</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Âm thanh</td>
+                  <td class="tbl-tskt">Tiêu chuẩn Audi A4 Sound System</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn nội thất LED trắng</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Kính chắn gió cách âm</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Kính màu đen, cách nhiệt</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Rèm che nắng cửa sau</td>
+                  <td class="tbl-tskt">Chỉnh tay</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Thảm lót sàn</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Ốp bệ cửa logo phát sáng</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đóng/mở cốp tự động bằng điện</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Ghế massage, điều chỉnh bằng khí nén</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Ghế lái nhớ vị trí</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Đèn viền và đèn nội thất đa màu</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cửa sổ trời</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Màn hình giải trí</td>
+                  <td class="tbl-tskt">10.1 inch</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Âm thanh</td>
+                  <td class="tbl-tskt">Tiêu chuẩn Audi</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Kính cách âm 2 lớp</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cốp chỉnh điện</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+              </table>
+            </ul>
+          </li>
+          <li>
+            <div class="drop">
+              Thông số kỹ thuật
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <ul class="submenu">
+              <table class="table-container">
+                <tr>
+                  <td class="tbl-tskt">Động cơ</td>
+                  <td class="tbl-tskt">A4 40 TFSI</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Dung tích</td>
+                  <td class="tbl-tskt">2.0L</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Công suất cực đại (Ps/rpm)</td>
+                  <td class="tbl-tskt">140/4.200 – 6.000</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Mô men xoắn cực đại (Nm/rpm)</td>
+                  <td class="tbl-tskt">320/1.450 – 4.200</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Hệ thống 12V mild hybrid MHEV</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Hộp số</td>
+                  <td class="tbl-tskt">7 cấp S tronic</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Dẫn động</td>
+                  <td class="tbl-tskt">Cầu trước</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Chế độ lái</td>
+                  <td class="tbl-tskt">5 chế độ</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Hệ thống treo cân bằng</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+              </table>
+            </ul>
+          </li>
+          <li>
+            <div class="drop">
+              Đánh giá an toàn
+              <i class="ri-arrow-down-s-line"></i>
+            </div>
+            <ul class="submenu">
+              <table class="table-container">
+                <tr>
+                  <td class="tbl-tskt">
+                    Hỗ trợ đỗ xe với cảm biến trước và sau cùng camera phía sau
+                  </td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Phục hồi năng lượng phanh</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cân bằng điện tử</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cảnh báo áp suất lốp</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">
+                    Bộ sơ cứu tam giác cảnh báo và áp phản quang
+                  </td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Số túi khí</td>
+                  <td class="tbl-tskt">
+                    Túi khí bên hông phía trước và túi khí cạnh bên
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Camera 360 độ</td>
+                  <td class="tbl-tskt">Tuỳ chọn</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">
+                    Hệ thống điều khiển hành trình, giới hạn tốc độ
+                  </td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Giám sát áp suất lốp</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Cảm biến tiền va chạm</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Hệ thống hỗ trợ đỗ xe chủ động</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Camera 360 độ</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+                <tr>
+                  <td class="tbl-tskt">Kiểm soát hành trình</td>
+                  <td class="tbl-tskt">Có</td>
+                </tr>
+              </table>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="dcl"></section>
+    <br />
+    <br />
+    <section class="form-dang-ky-xe" style="position: relative" id="form-dkx">
+      <form name="dangkyxeform" id="form">
+        <h2>ĐĂNG KÝ</h2>
+        <div class="input-control">
+          <input type="text" name="name" id="name" required />
+          <div class="underline"></div>
+          <label for="name">Họ và tên</label>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <input type="text" name="address" id="address" required />
+          <div class="underline"></div>
+          <label for="address">Địa chỉ</label>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <input type="text" name="email" id="email" required />
+          <div class="underline"></div>
+
+          <label for="email">Email</label>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <input type="tel" name="number" id="number" required />
+          <div class="underline"></div>
+          <label for="number">Số điện thoại</label>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <input type="text" name="note" id="note" required />
+          <div class="underline"></div>
+          <label for="note">Ghi chú</label>
+        </div>
+        <button class="dangkyxe" onclick="checkdangkyxe()" type="button">
+          ĐĂNG KÝ XE
+        </button>
+      </form>
+    </section>
+    <section class="footer">
+      <div class="container-footer">
+        <div class="col">
+          <div class="heading-fot"><h3>Tất cả mẫu xe</h3></div>
+          <div class="row"><a href="#">Tất cả mẫu xe</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Dịch vụ khách hàng</h3></div>
+          <div class="row"><a href="#">Đăng ký lái thử</a></div>
+          <div class="row"><a href="#">Liên hệ chúng tôi</a></div>
+          <div class="row"><a href="#">Xưởng dịch vụ</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Audi Việt Nam</h3></div>
+          <div class="row"><a href="#">Thông tin đại lý</a></div>
+          <div class="row"><a href="#">Tuyển dụng</a></div>
+          <div class="row"><a href="#">Tin tức & Sự kiện</a></div>
+        </div>
+        <div class="col">
+          <div class="scrolltoTop" onclick="scrolltoTop()">
+            Trở về đầu trang <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="scrolltoTop-mobile" onclick="scrolltoTop()">
+        Trở về đầu trang <i class="ri-arrow-up-line"></i>
+      </div>
+    </section>
+    <div id="pu1" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"> </i>
+          Vui lòng đăng nhập
+        </div>
+
+        <button
+          type="button"
+          onclick="window.location='../html/dangnhap.html'"
+          class="dong-popup"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+    <div id="pucf" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-error-warning-line"> </i>
+          Bạn có chắc chắn đăng ký xe?
+        </div>
+        <div class="thongtindangky">
+          <div>Họ tên: <span id="ten-dki"></span></div>
+          <div>Địa chỉ: <span id="diachi-dki"></span></div>
+
+          <div>Email: <span id="email-dki"></span></div>
+
+          <div>Số điện thoại: <span id="sodienthoai-dki"></span></div>
+
+          <div>Ghi chú: <span id="ghichu-dki"></span></div>
+          <div>Tên xe: <span id="tenxe-dki"></span></div>
+
+          <div>Màu xe: <span id="mauxe-dki"></span></div>
+          <div>Giá xe: <span id="giaxe-dki"></span></div>
+        </div>
+
+        <button type="button" id="dongy-xe" class="dong-y">Đồng ý</button>
+        <button class="dong-popup">Hủy</button>
+      </div>
+    </div>
+    <div id="pu2" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup"></i>
+        <div class="text">
+          <i class="ri-checkbox-circle-line"> </i>
+          Đăng ký thành công!
+        </div>
+
+        <button type="button" onclick="vaotranguser()" class="dong-y">
+          OK
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="../js/car.js"></script>
+  <script src="../js/listxe.js"></script>
+  <script src="../js/dangkyxe.js"></script>
+  <script src="../js/local.js"></script>
+
+  <script src="../js/user.js"></script>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="shortcut icon" type="image/png" href="../AUDI/Untitled-1.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="../css/car.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("TSIemNQr-lTP0C0tm");
+      })();
+    </script>
+  </head>
+  <body class="dn" onload="loadLocal()">
+    <div id="toastBox"></div>
+    <input type="checkbox" id="toggle" class="checkbox" />
+    <section id="header">
+      <a href="../index.html" style="text-decoration: none">
+        <div class="logo-admin black">
+          <ul class="logo-admin-ul">
+            <li><span>ĐỨC ANH AUDI</span></li>
+            <li><span>ANH AUDI 88</span></li>
+          </ul>
+        </div>
+      </a>
+      <div>
+        <label class="toggle" for="toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <ul id="nav" class="nav">
+          <li class="nav-item"><a href="../html/mauxe.html"> MẪU XE</a></li>
+          <li class="nav-item"><a href="../html/dichvu.html"> DỊCH VỤ</a></li>
+          <li class="nav-item">
+            <a href="../html/gioithieu.html"> GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item">
+            <a href="../html/dangnhap.html" class="active"> TÀI KHOẢN</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="login">
+      <div class="loging">
+        <video autoplay loop muted plays-inline id="bg-video">
+          <source
+            src="../audi/Final Fantasy XV  Audi R8 Star of Lucis Trailer.mp4"
+          />
+        </video>
+        <div class="login-form">
+          <h1>Đăng nhập</h1>
+          <form name="dangnhapform">
+            <div class="select-container">
+              <select class="select-box" id="options" class="option">
+                <option value="khachhang" id="chucvu">Khách hàng</option>
+                <option value="quanly" id="chucvu">Quản lý</option>
+              </select>
+              <div class="icon-container">
+                <i class="ri-arrow-down-s-line"></i>
+              </div>
+            </div>
+            <div class="input-control">
+              <input type="text" name="username" id="username" required />
+              <div class="underline"></div>
+              <label for="username">Tài khoản</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="password" name="pass" id="pass" required />
+              <i class="ri-eye-line showpass" id="togglePassword"></i>
+              <div class="underline"></div>
+              <label for="pass">Mật khẩu </label>
+              <div class="error"></div>
+            </div>
+            <input type="hidden" />
+            <div class="fgpass">
+              <a type="button" class="qmk">Quên mật khẩu</a>
+            </div>
+            <button
+              class="dangnhap signin-btn"
+              onclick="checkdangnhap()"
+              type="button"
+            >
+              Đăng nhập
+            </button>
+            <div class="signup">
+              Bạn chưa có tài khoản?
+              <span> <a href="../html/dangky.html">Đăng ký</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="container-footer">
+        <div class="col">
+          <div class="heading-fot"><h3>Tất cả mẫu xe</h3></div>
+          <div class="row"><a href="#">Tất cả mẫu xe</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Dịch vụ khách hàng</h3></div>
+          <div class="row"><a href="#">Đăng ký lái thử</a></div>
+          <div class="row"><a href="#">Liên hệ chúng tôi</a></div>
+          <div class="row"><a href="#">Xưởng dịch vụ</a></div>
+        </div>
+        <div class="col">
+          <div class="heading-fot"><h3>Audi Việt Nam</h3></div>
+          <div class="row"><a href="#">Thông tin đại lý</a></div>
+          <div class="row"><a href="#">Tuyển dụng</a></div>
+          <div class="row"><a href="#">Tin tức & Sự kiện</a></div>
+        </div>
+        <div class="col">
+          <div class="scrolltoTop" onclick="scrolltoTop()">
+            Trở về đầu trang <i class="ri-arrow-up-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="scrolltoTop-mobile" onclick="scrolltoTop()">
+        Trở về đầu trang <i class="ri-arrow-up-line"></i>
+      </div>
+    </section>
+    <div id="signinus" class="popup-outer">
+      <div class="popup-box chuyenhuong">
+        <div class="profile-text">
+          <div class="text">
+            <i class="ri-error-warning-line"></i>
+            Đang chuyển hướng,...
+          </div>
+          <div class="lds-dual-ring"></div>
+        </div>
+
+        <button type="button" onclick="home()" class="dong-popup">
+          <i class="ri-login-box-line"></i>
+        </button>
+      </div>
+    </div>
+    <div id="signinad" class="popup-outer">
+      <div class="popup-box chuyenhuong">
+        <div class="profile-text">
+          <div class="text">
+            <i class="ri-error-warning-line"> </i>
+            Đang chuyển hướng,...
+          </div>
+          <div class="lds-dual-ring"></div>
+        </div>
+        <button type="button" onclick="admin()" class="dong-popup">
+          <i class="ri-login-box-line"></i>
+        </button>
+      </div>
+    </div>
+    <div id="forgotpassword" class="popup-outer">
+      <div class="popup-box">
+        <i class="ri-close-circle-fill close dong-popup" onclick="reload()"></i>
+        <div class="profile-text">
+          <div class="text">QUÊN MẬT KHẨU</div>
+          <div class="fg-pass" style="text-align: left; justify-content: left">
+            <div class="input-control">
+              <input type="text" id="user-forgot-pass" required />
+              <div class="underline"></div>
+              <label for="user-forgot-pass">Tài khoản</label>
+              <div class="error"></div>
+            </div>
+            <div class="input-control">
+              <input type="text" id="email-forgot-pass" required />
+              <div class="underline"></div>
+              <label for="email-forgot-pass">Email</label>
+              <div class="error"></div>
+            </div>
+            <input type="hidden" id="index-forgot" />
+          </div>
+        </div>
+        <button type="button" onclick="forgot()" class="yeu-caunp">
+          Yêu cầu lấy lại mật khẩu
+        </button>
+      </div>
+    </div>
+    <div id="pwOK" class="popup-outer">
+      <div class="popup-box">
+        <div class="profile-text">
+          <div class="text">
+            <i class="ri-mail-unread-fill" style="color: green"></i>
+            Yêu cầu cấp lại mật khẩu thành công!
+            <br />
+            Vui lòng kiểm tra Email của bạn!
+          </div>
+          <button type="button" onclick="reload()" class="dong-popup">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/car.js"></script>
+  <script src="../js/dangkydangnhap.js"></script>
+  <script src="../js/forgotpass.js"></script>
+  <script src="../js/local.js"></script>
+</html>
